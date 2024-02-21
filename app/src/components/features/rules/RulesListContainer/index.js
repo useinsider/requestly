@@ -34,7 +34,6 @@ import {
 import { trackRulesImportStarted, trackUploadRulesButtonClicked } from "modules/analytics/events/features/rules";
 import { trackShareButtonClicked } from "modules/analytics/events/misc/sharing";
 import { redirectToCreateNewRule } from "utils/RedirectionUtils";
-import FeatureLimiterBanner from "components/common/FeatureLimiterBanner/featureLimiterBanner";
 import { useFeatureIsOn } from "@growthbook/growthbook-react";
 import "./RulesListContainer.css";
 
@@ -209,7 +208,6 @@ const RulesListContainer = ({ isTableLoading = false }) => {
   return (
     <>
       {/* Page content */}
-      {isFeatureLimiterOn && user.isLimitReached ? <FeatureLimiterBanner /> : null}
       {/* Table */}
       <ProCard title={null} className="rules-table-container rules-list-container">
         <RulesTable
